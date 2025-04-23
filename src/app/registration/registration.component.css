@@ -1,0 +1,273 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Prevent Scrollbars */
+html, body {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f0f0f;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Background Animation */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(255, 0, 150, 0.3) 10%, transparent 50%),
+                radial-gradient(circle, rgba(0, 255, 255, 0.3) 10%, transparent 50%);
+    background-size: 300% 300%;
+    animation: moveBackground 10s infinite linear;
+    z-index: -1;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Centering Login Box */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+/* Login Box */
+.login-box {
+    width: 550px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Title */
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 28px;
+}
+
+/* Input Box */
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Input Fields */
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #00f7ff;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Floating Label Effect */
+.input-box label {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+/* Label moves up when focused */
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -12px;
+    left: 5px;
+    color: #00f7ff;
+    font-size: 12px;
+}
+
+/* Gender Radio Buttons */
+.gender-box {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.gender-label {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.gender-options {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.gender-options label {
+    color: #00f7ff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Password Eye Icon */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #00f7ff;
+    transition: color 0.3s;
+}
+
+.toggle-password:hover {
+    color: #ff00ff;
+}
+
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(45deg, #00f7ff, #ff00ff);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(45deg, #ff00ff, #00f7ff);
+    box-shadow: 0 0 20px #00f7ff;
+}
+
+.submit-btn:active {
+    transform: scale(0.95);
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #00f7ff;
+    transition: 0.3s ease-in-out;
+}
+
+.forgot-password a:hover {
+    color: #ff00ff;
+}
+
+
+
+/* Custom Select Dropdown */
+.custom-select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background: transparent;
+    color: #ff00ff;
+    border: none;
+    border-bottom: 2px solid #00f7ff;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+}
+
+.select-label {
+    position: absolute;
+    left: 10px;
+    top: -12px;
+    color: #00f7ff;
+    font-size: 12px;
+}
+
+/* Toggle Switch */
+.toggle-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.toggle-label {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Switch styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* When checked */
+.switch input:checked + .slider {
+    background-color: #00f7ff;
+    box-shadow: 0 0 10px #00f7ff;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(24px);
+}
+

@@ -1,0 +1,114 @@
+::ng-deep .mat-dialog-container {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+body {
+  background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.registration-card {
+  max-width: 600px;
+  width: 100%;
+  background: #1b1b2f;
+  border-radius: 15px;
+  border: 1px solid #00ffe0;
+  box-shadow: 0 0 20px #00ffe0, 0 0 40px #ff00ff, 0 0 60px #00ffff;
+  padding: 30px;
+  color: #fff;
+}
+
+label.form-label,
+.form-check-label {
+  color: #ff00ff;
+  font-weight: bold;
+}
+
+.input-custom {
+  background-color: #101021;
+  border: 2px solid #00ffcc;
+  color: #00ffcc;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-custom:focus {
+  border-color: #ff00ff;
+  box-shadow: 0 0 10px #00ffe0, 0 0 20px #ff00ff;
+  outline: none;
+  background-color: #191933;
+  color: #00ffcc;
+}
+
+.form-select.input-custom option {
+  background-color: #1e1e2f;
+  color: #00ffcc;
+}
+
+.form-check-input {
+  background-color: #1b1b2f;
+  border-color: #00ffe0;
+}
+
+.form-check-input:checked {
+  background-color: #00ffe0;
+  border-color: #00ffe0;
+  box-shadow: 0 0 10px #00ffe0;
+}
+
+.form-check-input[type="checkbox"]:checked {
+  background-color: #39ff14;
+  border-color: #39ff14;
+  box-shadow: 0 0 10px #39ff14;
+}
+
+.toggle-password {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 20px;
+  color: #ff00ff;
+  transition: 0.3s;
+}
+
+.toggle-password:hover {
+  text-shadow: 0 0 5px #ff00ff;
+}
+
+.btn-custom {
+  background: linear-gradient(45deg, #ff00ff, #00ffe0, #39ff14);
+  background-size: 200% auto;
+  color: #1b1b2f;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffe0;
+}
+
+.btn-custom:hover {
+  background-position: right center;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffe0, 0 0 40px #39ff14;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+

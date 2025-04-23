@@ -1,0 +1,68 @@
+/* Neon Title */
+.neon-title {
+    font-size: 24px;
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4d4d;
+    text-align: center;
+}
+
+/* Neon Content */
+.neon-content {
+    font-size: 18px;
+    color: #ff4d4d; /* Neon Red */
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff0000;
+}
+
+
+
+
+/* Dialog Background */
+mat-dialog-container {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    border-radius: 10px;
+}
+
+/* Button Section */
+.neon-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Delete Button */
+.neon-delete-btn {
+    background: linear-gradient(45deg, #ff0000, #ff4d4d);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+}
+
+.neon-delete-btn:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+/* Cancel Button */
+.neon-cancel-btn {
+    background: linear-gradient(45deg, #00f7ff, #0077ff);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.neon-cancel-btn:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 1);
+}

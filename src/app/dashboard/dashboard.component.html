@@ -1,0 +1,21 @@
+<!-- Header with Top-Left Menu -->
+<header class="dashboard-header">
+    <nav class="menu">
+        <button class="logout-btn" (click)="onLogOut()">LogOut</button>
+        <a routerLink="/dashboard" class="nav-link">Dashboard</a>
+        <a routerLink="/dashboard/display" class="nav-link">UserList</a>
+
+    </nav>
+    <h1 class="logo">HRMS Dashboard</h1>
+
+</header>
+
+<!-- Main Content -->
+<main class="dashboard-main">
+    <router-outlet></router-outlet>
+</main>
+
+<!-- Footer -->
+<footer class="dashboard-footer">
+    <p>&copy; 2025 HRMS. All rights reserved.</p>
+</footer>

@@ -1,0 +1,50 @@
+
+    <div class="background-animation"></div>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Welcome Back!</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <div class="input-box">
+                    <input type="username" name="username" formControlName="username" >
+                    <label>UserName</label>
+
+                    <div class="alert alert-danger" *ngIf="formControl['username'].touched && formControl['username'].invalid">
+                        <div *ngIf="formControl['username'].touched && formControl['username'].errors['required']">
+                            This Field is required!!
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="input-box">
+                    <input type="password" name="password" formControlName="password">
+                    <label>Password</label>
+
+                    <div class="alert alert-danger" *ngIf="formControl['password'].touched && formControl['password'].invalid">
+                        <div *ngIf="formControl['password'].touched && formControl['password'].errors['required']">
+                            This Field is required!!
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div>
+                    <img [src]="captchaUrl" alt="CAPTCHA" />
+
+                    <button (click)="reload()">🔄 Reload</button>
+                  </div>
+                  
+                  <input type="text" [(ngModel)]="userInput" placeholder="Enter CAPTCHA" />
+                  <button (click)="verify()">Verify</button>
+                  
+                  <p>{{ message }}</p> -->
+
+
+                <div class="forgot-password">
+                    <a routerLink="/forgotpassword">Forgot Password?</a>
+                </div>
+                <button type="submit" class="submit-btn" >Login</button>
+            </form>
+        </div>
+    </div>

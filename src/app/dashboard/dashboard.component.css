@@ -1,0 +1,114 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
+body {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header with Top-Left Menu */
+.dashboard-header {
+    width: 100%;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Menu on Top-Left */
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-link:hover {
+    background: rgba(0, 255, 255, 0.3);
+    transform: scale(1.05);
+    color: #ff00ff;
+    border-radius: 5px;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    color: #00f7ff;
+}
+
+/* Logout Button */
+.logout-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: linear-gradient(45deg, #00f7ff, #ff00ff);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.logout-btn:hover {
+    background: linear-gradient(45deg, #ff00ff, #00f7ff);
+    box-shadow: 0 0 10px #00f7ff;
+}
+
+/* Full-Width Main Content */
+/* Ensure the main content takes full width */
+/* Ensure main content spans full width */
+/* Main content should take full width */
+.dashboard-main {
+    margin-top: 80px;
+    padding: 20px;
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;  /* Ensure child elements take full width */
+}
+
+
+
+/* Make sure the router-outlet spans full width */
+.dashboard-main > router-outlet {
+    width: 100%;
+    display: block;
+}
+
+
+/* Footer */
+.dashboard-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+}

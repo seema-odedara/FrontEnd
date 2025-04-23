@@ -1,0 +1,85 @@
+<div class="background-animation"></div>
+<div class="login-container">
+    <div class="login-box">
+        <h2>Create an Account</h2>
+        <form [formGroup]="registrationForm" (ngSubmit)="saveEmployee()">
+            <div class="input-box">
+                <input type="text" name="username" formControlName="username">
+                <label>Username</label>
+            </div>
+            <div class="input-box">
+                <input type="email" name="email" formControlName="email">
+                <label>Email</label>
+            </div>
+            <!-- Gender Selection -->
+            <div class="gender-box">
+                <label class="gender-label">Gender:</label>
+                <div class="gender-options">
+                    <input type="radio" id="male" name="gender" value="MALE" formControlName="gender">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="FEMALE" formControlName="gender">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+            <div class="input-box">
+                <input type="number" name="age" formControlName="age">
+                <label>Age</label>
+            </div>
+            <!-- Home Town Selection -->
+            <div class="input-box">
+                <input list="hometowns" name="homeTown" formControlName="homeTown">
+                <label>Home Town</label>
+                <datalist id="hometowns">
+                    <option value="New York"></option>
+                    <option value="Los Angeles"></option>
+                    <option value="Chicago"></option>
+                    <option value="Houston"></option>
+                    <option value="Miami"></option>
+                </datalist>
+            </div>
+            <!-- Password Fields with Eye Icon -->
+            <div class="input-box">
+                <input type="password" id="password" name="password" formControlName="password">
+                <label>Password</label>
+                <span id="togglePassword" class="toggle-password"
+                    (click)="togglePassword('password', 'togglePassword')">🙈</span>
+            </div>
+
+            <div *ngIf=" registrationForm.touched &&registrationForm.errors?.passwordMismatch " style="color: #ff4d4d; margin-bottom: 15px;">
+                Passwords do not match
+              </div>
+              
+
+            <div class="input-box">
+                <input type="password" id="confirm-password" name="confirmPassword" formControlName="confirmPassword">
+                <label>Confirm Password</label>
+                <span id="toggleConfirmPassword" class="toggle-password"
+                    (click)="togglePassword('confirm-password', 'toggleConfirmPassword')">🙈</span>
+            </div>
+
+            <!-- Role Dropdown -->
+            <div class="input-box">
+                <select class="custom-select"  formControlName="role">
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="ADMIN">Admin</option>
+                    <option value="USER">User</option>
+                </select>
+                <label class="select-label"></label>
+            </div>
+
+            <!-- Is Active Switch -->
+            <div class="toggle-box">
+                <label class="toggle-label">Is Active</label>
+                <label class="switch">
+                    <input type="checkbox" formControlName="isActive">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn" [disabled]="registrationForm.invalid">Sign Up</button>
+            <div class="forgot-password">
+                <a routerLink="/dashboard">Go To Home</a>
+            </div>
+        </form>
+    </div>
+</div>

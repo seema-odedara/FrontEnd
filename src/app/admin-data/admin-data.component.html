@@ -1,0 +1,20 @@
+<div class="profile-container">
+  <div class="profile-card-horizontal neon-glow">
+    <div class="profile-left">
+      <img [src]="'data:image/jpeg;base64,' + adminData.fileData" alt="Profile Image" class="profile-image" />
+      <h2>{{ adminData.name }}</h2>
+      <p class="role">{{ adminData.accessRole }}</p>
+    </div>
+
+    <div class="profile-right">
+      <div class="row"><span class="label">Username:</span><span class="value">{{ adminData.username }}</span></div>
+      <div class="row"><span class="label">Email:</span><span class="value">{{ adminData.email }}</span></div>
+      <div class="row"><span class="label">Gender:</span><span class="value">{{ adminData.gender }}</span></div>
+      <div class="row"><span class="label">Date of Birth:</span><span class="value">{{ adminData.dob }}</span></div>
+      <div class="row"><span class="label">Contact:</span><span class="value">{{ adminData.contactNumber }}</span></div>
+      <div class="row"><span class="label">City:</span><span class="value">{{ adminData.address }}</span></div>
+      <div class="row"><span class="label">Pin Code:</span><span class="value">{{ adminData.pinCode }}</span></div>
+      <div class="row"><span class="label">Active:</span><span class="value">{{ adminData.isActive ? 'Yes' : 'No' }}</span></div>
+    </div>
+  </div>
+</div>

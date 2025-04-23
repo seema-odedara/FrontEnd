@@ -1,0 +1,96 @@
+<mat-dialog-content>
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="card p-4 registration-card">
+  
+        <form [formGroup]="employeeForm" (ngSubmit)="updateStudent()">
+          <div class="mb-3">
+
+            <div class="mb-3 text-center" *ngIf="imagePreview">
+              <img [src]="imagePreview" alt="Profile Image" class="rounded-circle border border-info mb-2" style="width: 120px; height: 120px;" />
+            </div>
+            
+            <label for="id" class="form-label fw-bold">ID</label>
+            <input type="text" class="form-control input-custom" id="id" formControlName="id">
+          </div>
+  
+          <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Name</label>
+            <input type="text" class="form-control input-custom" id="name" formControlName="name">
+          </div>
+  
+          <div class="mb-3">
+            <label for="dob" class="form-label fw-bold">Dob</label>
+            <input type="dob" class="form-control input-custom" id="dob" formControlName="dob">
+          </div>
+  
+          <div class="mb-3">
+            <label for="email" class="form-label fw-bold">Email</label>
+            <input type="email" class="form-control input-custom" id="email" formControlName="email">
+          </div>
+  
+          <div class="mb-3">
+            <label for="username" class="form-label fw-bold">Username</label>
+            <input type="text" class="form-control input-custom" id="username" formControlName="username">
+          </div>
+  
+          <div class="mb-3">
+            <label class="form-label fw-bold" for="password">Password</label>
+            <input class="form-control input-custom" type="password" id="password" formControlName="password">
+            <span id="togglePassword" class="toggle-password"
+                  (click)="togglePassword('password', 'togglePassword')">🙈</span>
+          </div>
+  
+          <div class="mb-3">
+            <label class="form-label fw-bold">Gender</label>
+            <div class="d-flex gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" id="male" value="MALE" formControlName="gender">
+                <label class="form-check-label" for="male">Male</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" id="female" value="FEMALE" formControlName="gender">
+                <label class="form-check-label" for="female">Female</label>
+              </div>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="address" class="form-label fw-bold">Address</label>
+            <input type="text" class="form-control input-custom" id="address" formControlName="address">
+          </div>
+  
+          <div class="mb-3">
+            <label for="contactNumber" class="form-label fw-bold">Contact Number</label>
+            <input type="text" class="form-control input-custom" id="contactNumber" formControlName="contactNumber">
+          </div>
+  
+          <div class="mb-3">
+            <label for="pinCode" class="form-label fw-bold">Pin Code</label>
+            <input type="text" class="form-control input-custom" id="pinCode" formControlName="pinCode">
+          </div>
+  
+          <div class="mb-3">
+            <label for="accessRole" class="form-label fw-bold">Role</label>
+            <select class="form-select input-custom" id="accessRole" formControlName="accessRole">
+              <option value="USER">USER</option>
+              <option value="ADMIN">ADMIN</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="isActive" class="form-label fw-bold">isActive</label>
+            <input type="text" class="form-control input-custom" id="pinCode" formControlName="isActive">
+          </div>
+  
+          <!-- <div class="form-check form-switch mb-3">
+            <label class="form-check-label fw-bold" for="isActive">IsActive</label>
+            <input class="form-check-input" type="checkbox" id="isActive"
+                   [checked]="employeeForm.get('isActive')?.value"
+                   (change)="onToggleIsActive($event)">
+          </div> -->
+
+        </form>
+      </div>
+    </div>
+  </mat-dialog-content>
+  
