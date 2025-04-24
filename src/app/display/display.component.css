@@ -142,4 +142,49 @@ td .neon-btn {
     cursor: not-allowed;
 }
 
+.avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+  }
+  
+  .avatar-fallback {
+    margin-left: 30%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #00c2ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+  }
+  
+  .pagination li {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #222;
+    color: #0ff;
+  }
+  
+  .pagination li.active {
+    font-weight: bold;
+    background-color: #0ff;
+    color: #000;
+  }
+  
+  .pagination li.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    cursor: default;
+  }
   

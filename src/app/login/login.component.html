@@ -1,50 +1,49 @@
+<div class="background-animation"></div>
+<div class="login-container">
+  <div class="login-box">
+    <h2>Welcome Back!</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
-    <div class="background-animation"></div>
-    <div class="login-container">
-        <div class="login-box">
-            <h2>Welcome Back!</h2>
-            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-                <div class="input-box">
-                    <input type="username" name="username" formControlName="username" >
-                    <label>UserName</label>
-
-                    <div class="alert alert-danger" *ngIf="formControl['username'].touched && formControl['username'].invalid">
-                        <div *ngIf="formControl['username'].touched && formControl['username'].errors['required']">
-                            This Field is required!!
-                        </div>
-                    </div>
-                </div>
-
-                
-
-                <div class="input-box">
-                    <input type="password" name="password" formControlName="password">
-                    <label>Password</label>
-
-                    <div class="alert alert-danger" *ngIf="formControl['password'].touched && formControl['password'].invalid">
-                        <div *ngIf="formControl['password'].touched && formControl['password'].errors['required']">
-                            This Field is required!!
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- <div>
-                    <img [src]="captchaUrl" alt="CAPTCHA" />
-
-                    <button (click)="reload()">🔄 Reload</button>
-                  </div>
-                  
-                  <input type="text" [(ngModel)]="userInput" placeholder="Enter CAPTCHA" />
-                  <button (click)="verify()">Verify</button>
-                  
-                  <p>{{ message }}</p> -->
-
-
-                <div class="forgot-password">
-                    <a routerLink="/forgotpassword">Forgot Password?</a>
-                </div>
-                <button type="submit" class="submit-btn" >Login</button>
-            </form>
+      <!-- Username -->
+      <div class="input-box">
+        <input type="text" formControlName="username" />
+        <label>Username</label>
+        <div class="alert alert-danger" *ngIf="formControl['username'].touched && formControl['username'].invalid">
+          <div *ngIf="formControl['username'].errors?.['required']">This field is required!!</div>
         </div>
-    </div>
+      </div>
+
+      <!-- Password -->
+      <div class="input-box">
+        <input type="password" formControlName="password" />
+        <label>Password</label>
+        <div class="alert alert-danger" *ngIf="formControl['password'].touched && formControl['password'].invalid">
+          <div *ngIf="formControl['password'].errors?.['required']">This field is required!!</div>
+        </div>
+      </div>
+
+      <!-- Captcha -->
+      <div class="captcha-box">
+        <div class="captcha-content">
+          <div class="captcha-text">{{ captchaText }}</div>
+          <button type="button" (click)="generateCaptcha()" class="regen-btn">Regenerate</button>
+        </div>
+        <input
+          type="text"
+          formControlName="captcha"
+          placeholder="Enter CAPTCHA"
+          class="captcha-input"
+        />
+        <div class="alert alert-danger" *ngIf="formControl['captcha'].touched && formControl['captcha'].invalid">
+          <div *ngIf="formControl['captcha'].errors?.['required']">This field is required!!</div>
+        </div>
+      </div>
+
+      <div class="forgot-password">
+        <a routerLink="/forgotpassword">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+  </div>
+</div>

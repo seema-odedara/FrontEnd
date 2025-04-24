@@ -23,6 +23,11 @@ export class ApiCallsService {
     return this.http.get<any>(this.APIUrl + '/getEmployeesByPage/' + pageNumber + '/' + perPageCount + '/' + sortColumn + '/' + sortDirection);
   }
 
+
+  getAllEmployeesByName(name: String, pageNumber: number, perPageCount: number){
+    return this.http.get<any>(this.APIUrl + '/search/' + name + '/' + pageNumber + '/' + perPageCount );
+  }
+
   getEmployeeById(id:number){
     return this.http.get(this.APIUrl + '/getEmployeeById/' + id);
   }
@@ -43,5 +48,27 @@ export class ApiCallsService {
 
   getAdminByUsername(username: String){
     return this.http.get(this.APIUrl + '/getAdminByUsername/' + username);
+  }
+
+  // sendResetLink(email: string) {
+  //   console.log("inside sendResetLink")
+  //   return this.http.post(this.APIUrl +`/forgot-password`, { email });
+  // }
+
+  // resetPassword(token: string, newPassword: string) {
+  //   return this.http.post(this.APIUrl + `/reset-password`, { token, newPassword });
+  // }
+
+  forgotPassword(email: string) {
+    console.log(email)
+    return this.http.post(this.APIUrl + `/forgot-password/${email}`, null);
+  }
+
+  validateToken(token: string) {
+    return this.http.get<boolean>( this.APIUrl + `/validate-token/${token}`);
+  }
+
+  resetPassword(token: string, newPassword: string) {
+    return this.http.post( this.APIUrl + `/reset-password/${token}`, {"password": newPassword});
   }
 }

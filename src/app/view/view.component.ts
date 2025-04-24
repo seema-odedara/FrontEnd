@@ -49,7 +49,6 @@ export class ViewComponent implements OnInit {
     this.myService.getEmployeeById(this.employeeId).subscribe((res) => {
       this.employeeForm.patchValue(res);
 
-      console.log(res)
       this.empData=res;
 
       if (this.empData.fileData) {
@@ -120,6 +119,16 @@ export class ViewComponent implements OnInit {
   onToggleIsActive(event: Event) {
     const input = event.target as HTMLInputElement;
     this.employeeForm.get('isActive')?.setValue(input.checked);
+  }
+
+  getInitials(): string {
+    if (!this.empData.name) return '';
+    const words = this.empData.name.trim().split(' ');
+    let initials = words[0]?.charAt(0).toUpperCase();
+    if (words.length > 1) {
+      initials += words[1]?.charAt(0).toUpperCase();
+    }
+    return initials;
   }
 
 }

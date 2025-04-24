@@ -141,3 +141,50 @@ html, body {
 .submit-btn:active {
     transform: scale(0.95);
 }
+
+
+
+
+
+
+
+
+
+.captcha-box {
+    margin-top: 15px;
+  }
+  
+  .captcha-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .captcha-text {
+    background-color: #222;
+    color: #0f0;
+    padding: 8px 12px;
+    font-family: monospace;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    user-select: none;
+    margin-right: 10px;
+  }
+  
+  .regen-btn {
+    background: #0f0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
+  .captcha-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  

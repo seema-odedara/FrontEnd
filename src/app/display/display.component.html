@@ -2,11 +2,19 @@
   <div class="card records-card">
     <h2 class="title">Student Records</h2>
 
+    <div class="search-container">
+      <input type="text" [(ngModel)]="searchName" placeholder="Search by Name" />
+      <button style="color: white;" class="btn neon-btn" (click)="search()">Search</button>
+      <button style="color: white;" class="btn neon-btn" (click)="reset()">Reset</button>
+    </div>
+
+
     <div class="table-container">
       <table class="neon-table">
         <thead>
           <tr>
             <th>ID</th>
+            <th>Profile</th>
             <th (click)="sortBy('username')">Username <i class="bi"
                 [ngClass]="{'bi-arrow-up': sortColumn === 'username' && !sortAsc, 'bi-arrow-down': sortColumn === 'username' && sortAsc}"></i>
             </th>
@@ -17,13 +25,26 @@
                 [ngClass]="{'bi-arrow-up': sortColumn === 'gender' && !sortAsc, 'bi-arrow-down': sortColumn === 'gender' && sortAsc}"></i>
             </th>
 
-            <th >Contact<i class="bi"></i></th>
+            <th>Contact<i class="bi"></i></th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let s of studentList; index as i">
             <td>{{ (currentPage - 1) * pageSize + i + 1 }}</td>
+
+            <td>
+              <ng-container *ngIf="s.fileData; else aliasBlock">
+                <img [src]="'data:image/png;base64,' + s.fileData" alt="profile" class="avatar-img"
+                  (error)="s.fileData = null" />
+              </ng-container>
+              <ng-template #aliasBlock>
+                <div class="avatar-fallback">
+                  {{ getInitials(s.username) }}
+                </div>
+              </ng-template>
+            </td>
+
             <td>{{s.username}}</td>
             <td>{{s.email}}</td>
             <td>{{s.gender}}</td>
@@ -42,9 +63,16 @@
     <div class="pagination-container">
       <ul class="pagination">
         <li [class.disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)">Previous</li>
-        <li *ngFor="let page of [].constructor(totalPages); let i = index" [class.active]="currentPage === i + 1"
-          (click)="goToPage(i+1)">{{ i + 1 }}</li>
+
+        <li *ngFor="let page of paginationPages"
+          [ngClass]="{ 'active': page === currentPage, 'disabled': !isNumber(page) }"
+          (click)="isNumber(page) && goToPage(page)">
+          {{ page }}
+        </li>
+
         <li [class.disabled]="currentPage === totalPages" (click)="goToPage(currentPage + 1)">Next</li>
+
+
       </ul>
     </div>
   </div>

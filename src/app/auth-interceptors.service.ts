@@ -24,7 +24,7 @@ export class AuthInterceptorsService implements HttpInterceptor {
     console.log("request", req);
     
     // if (req.url.includes('/employee/login') || req.url.includes('/employee/getCaptcha') || req.url.includes('/employee/verifyCaptcha')){
-      if (req.url.includes('/employee/login')){
+      if (req.url.includes('/employee/login') || req.url.includes('/employee/forgot-password/') ||  req.url.includes('/employee/reset-password/') || req.url.includes('/employee/validate-token/')){
       return next.handle(req);
     }
     console.log("required token for this request")

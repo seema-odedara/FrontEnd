@@ -3,11 +3,24 @@
       <div class="card p-4 registration-card">
   
         <form [formGroup]="employeeForm" (ngSubmit)="updateStudent()">
+
+
+          <ng-container *ngIf="imagePreview; else aliasBlock">
+            <img [src]="imagePreview" alt="Profile Image" class="rounded-circle border border-info mb-2" style="width: 120px; height: 120px;" 
+              (error)="imagePreview = null" />
+          </ng-container>
+          <ng-template #aliasBlock>
+            <div class="avatar-fallback">
+              {{ getInitials() }}
+            </div>
+          </ng-template>
+
+
           <div class="mb-3">
 
-            <div class="mb-3 text-center" *ngIf="imagePreview">
-              <img [src]="imagePreview" alt="Profile Image" class="rounded-circle border border-info mb-2" style="width: 120px; height: 120px;" />
-            </div>
+            <!-- <div class="mb-3 text-center" *ngIf="imagePreview"> -->
+              <!-- <img [src]="imagePreview" alt="Profile Image" class="rounded-circle border border-info mb-2" style="width: 120px; height: 120px;" /> -->
+            <!-- </div> -->
             
             <label for="id" class="form-label fw-bold">ID</label>
             <input type="text" class="form-control input-custom" id="id" formControlName="id">
