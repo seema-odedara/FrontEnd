@@ -187,4 +187,19 @@ td .neon-btn {
     opacity: 0.6;
     cursor: default;
   }
+
+  .btn.neon-btn {
+    background: #00ff99;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .btn.neon-btn:hover {
+    background: #00cc77;
+  }
+  
   

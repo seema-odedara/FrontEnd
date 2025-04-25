@@ -2,6 +2,11 @@
   <div class="card records-card">
     <h2 class="title">Student Records</h2>
 
+    <button class="btn neon-btn" style="color: white; margin-bottom: 10px;" (click)="downloadExcel()">
+      Export to Excel
+    </button>
+    
+
     <div class="search-container">
       <input type="text" [(ngModel)]="searchName" placeholder="Search by Name" />
       <button style="color: white;" class="btn neon-btn" (click)="search()">Search</button>
@@ -75,5 +80,10 @@
 
       </ul>
     </div>
+    <div class="fw-bold text-center m-2">
+      <p class="m-0">Current record from {{ currentPage * 10 - 10 + 1 }} to {{currentPage * 10 -
+           10 +
+           currentData}} of Total: {{ totalData }}</p>
+ </div>
   </div>
 </div>

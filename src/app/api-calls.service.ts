@@ -10,25 +10,25 @@ export class ApiCallsService {
 
   constructor(private http: HttpClient) { }
 
-  loginEmployee(employee: any){
-    return this.http.post(this.APIUrl + '/login', employee, {responseType:"text"});
+  loginEmployee(employee: any) {
+    return this.http.post(this.APIUrl + '/login', employee, { responseType: "text" });
   }
 
-  saveEmployee(employee: any){
+  saveEmployee(employee: any) {
     console.log(employee)
-    return this.http.post(this.APIUrl + '/saveEmployee', employee, {responseType:"text"});
+    return this.http.post(this.APIUrl + '/saveEmployee', employee, { responseType: "text" });
   }
 
-  getAllEmployees(pageNumber: number, perPageCount: number, sortColumn:string, sortDirection:string){
+  getAllEmployees(pageNumber: number, perPageCount: number, sortColumn: string, sortDirection: string) {
     return this.http.get<any>(this.APIUrl + '/getEmployeesByPage/' + pageNumber + '/' + perPageCount + '/' + sortColumn + '/' + sortDirection);
   }
 
 
-  getAllEmployeesByName(name: String, pageNumber: number, perPageCount: number){
-    return this.http.get<any>(this.APIUrl + '/search/' + name + '/' + pageNumber + '/' + perPageCount );
+  getAllEmployeesByName(name: String, pageNumber: number, perPageCount: number) {
+    return this.http.get<any>(this.APIUrl + '/search/' + name + '/' + pageNumber + '/' + perPageCount);
   }
 
-  getEmployeeById(id:number){
+  getEmployeeById(id: number) {
     return this.http.get(this.APIUrl + '/getEmployeeById/' + id);
   }
 
@@ -42,11 +42,11 @@ export class ApiCallsService {
     });
   }
 
-  deleteEmployee(id:number){
-    return this.http.delete(this.APIUrl + '/deleteEmployeeById/' + id , {responseType:"text"});
+  deleteEmployee(id: number) {
+    return this.http.delete(this.APIUrl + '/deleteEmployeeById/' + id, { responseType: "text" });
   }
 
-  getAdminByUsername(username: String){
+  getAdminByUsername(username: String) {
     return this.http.get(this.APIUrl + '/getAdminByUsername/' + username);
   }
 
@@ -65,10 +65,14 @@ export class ApiCallsService {
   }
 
   validateToken(token: string) {
-    return this.http.get<boolean>( this.APIUrl + `/validate-token/${token}`);
+    return this.http.get<boolean>(this.APIUrl + `/validate-token/${token}`);
   }
 
   resetPassword(token: string, newPassword: string) {
-    return this.http.post( this.APIUrl + `/reset-password/${token}`, {"password": newPassword});
+    return this.http.post(this.APIUrl + `/reset-password/${token}`, { "password": newPassword });
+  }
+
+  downloadExcel() {
+    return this.http.get(this.APIUrl + `/DownloadExcelFromDatabase`, { responseType: 'blob' });
   }
 }
